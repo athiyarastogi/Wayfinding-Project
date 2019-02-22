@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {font-family: Sans-serif;}
+
+  img {
+    float: left;
+    height: 645.5px;
+    width: 698.33px;
+    
+  }
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: #ffffff;
+  text-align: right;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 15px;
+  transition: 0.3s;
+  font-size: 14px;
+  
+}
+
+.tab button:hover {
+  font-weight: bold; 
+}
+
+
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #80e5ff;
+}
+
+
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  text-align: left;
+  font-size: 14px;
+  
+}
+
+</style>
+
+</head>
+<body>
+
+
+
+
+<h2>UTSC LIBRARY FIRST FLOOR</h2>
+
+<img src="Draft B_Wayfinding.jpg" alt="" usemap="#Map" />
+<map name="Map" id="Map">
+    <area alt="" title="" id="course_reserve" href="https://google.com" shape="poly" coords="3275,3955,3319,3953,3316,3999,3272,3999" />
+    
+</map>
+
+
+<!-- <map name="Map" id="Map">
+    <area alt="" title="" href="#" shape="poly" coords="2959,2229,2960,2454,2451,2454,2451,2230" />
+    <area alt="" title="" href="#" shape="rect" coords="2729,2353" /> -->
+  
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Facilities')">Facilities</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Services and Collections</button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Staff Areas</button>
+      </div>
+      
+      <div id="Facilities" class="tabcontent">
+        
+        <p>Bookable Group Study Room AC 251 - 253A<p>
+        <p>Drop-in Group Study Room AC 255 - 258</p>
+        <p>Instructional Lab & Study Space AC 286A</p>
+        <p>Reading Room</p>
+        <p>Nook</p>
+        <p>Info Commons</p>
+        <p>Bike Desks</p>
+        <p>Wellness Space</p>
+        <p>Study Carrels</p>
+        <p>Washrooms</p>
+        <p>Elevator</p>
+        <p>Self-Checkout Machine</p>
+      </div>
+      
+      <div id="Paris" class="tabcontent">
+        <p>Popular Collection</p>
+        <p>Course Reserves & Tech Lending</p>
+        <p>Compact Storage (journals before 1998)</p>
+        <p>Book Stacks (JQ-Z)</p>
+        <p>Info Desk</p>
+        <p>Printing/Copying/Scanning</p>
+        <p>Specialty Equipment</p>
+        <p>Data Lab AC 260</p>
+        <p>Makerspace</p>
+        <p>Journal Stacks (1998-current)</p>
+        <p>Cookbook Collection</p>
+        <p>Academic Skills Collection</p>
+        <p>Games Collection</p>
+        <p>Accessibility Equipment</p>
+      </div>
+      
+      <div id="Tokyo" class="tabcontent">
+        <p>Digital Scholarship Unit AC 270</p>
+        <p>Chief Librarian AC 264</p>
+        <p>Administrative Assistant AC 263</p>
+        <p>Business Officer AC 265</p>
+        <p>User Services  AC 280</p>
+        <p>User Services Coordinator AC 281</p>
+        <p>User Services & Collections AC 275</p>
+        <p>Digital Scholarship Coordinator AC 278</p>
+        <p>Collection Development Coordinator AC 276</p>
+        <p>Liaison Librarian Coordinator AC 288</p>
+        <p>Data Librarian AC 287</p>
+        <p>Data Librarian AC 287</p>
+      </div>
+      
+      <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
+         
+      </body>
+      </html> 
+      
