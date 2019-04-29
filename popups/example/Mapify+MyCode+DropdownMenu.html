@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Mapify - test</title>
+<link rel="stylesheet" type="text/css" href="../build/jquery.mapify.css">	
+<style type="text/css">
+
+
+
+
+body {font-family: Sans-serif;}
+
+img {
+    float: left;
+    height: 878px;
+    width: 817px;
+    
+}  
+/*----popups mapify---------*/
+/* Mapify custom popOver example */
+	/*styling material in the popover Heading */
+	.mapify-popOver strong{
+		font-weight: 500;
+		font-size:24px;
+		line-height: 1em;
+		display: block;
+		margin-bottom: 10px;
+		color: #000;
+	}
+	/*color of text in teh popup Paragraph*/
+	.mapify-popOver{
+		color: #999;
+		font-size: 16px;
+		height: 200px;
+	}
+	.mapify-popOver-content{
+		position: relative;
+		top:50%;
+		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+	}
+	
+	.mapify-popOver.customPopOver{
+		background:white;
+	}
+	
+	/* Custom hovering style, area on which hovered */
+	.mapify-hover{
+		fill:rgba(0,0,0,0.15);
+		stroke: #fff;
+		stroke-width: 2px;
+	}
+	
+	.customHover{
+		fill:#09f;
+		stroke: #fff;
+		stroke-width: 2;
+	}
+
+.box {border: solid 1px;}
+
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: #ffffff;
+  text-align: right;
+}
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 15px;
+  transition: 0.3s;
+  font-size: 14px;
+  
+}
+.tab button:hover {
+  font-weight: bold; 
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #80e5ff;
+}
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  text-align: left;
+  font-size: 14px;
+  
+}
+/*All code for the first dropdown button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.dropdown:hover .dropbtn {
+background-color: #3e8e41;
+}
+
+
+</style>
+
+</head>
+<body>
+      <!-- code for dropdown menu -->
+      <div class="dropdown">
+          <button class="dropbtn">Floors</button>
+          <div class="dropdown-content">
+            <a href="#" onclick="showFirstFloor()">First Floor</a>
+            <a href="#" onclick="showSecondFloor()">Second Floor</a>
+          </div>
+        </div>
+        <!-- code for dropdown menu -->
+
+
+<div class="first" style="display: none;" id="first">
+  <h2>UTSC LIBRARY FIRST FLOOR</h2>
+
+  <img class="map" src="1st Floor Wayfinding Project.svg" alt="" usemap="#Map" />
+  <map name="Map" id="Map">
+        <area data-nbmembre="3" alt="Saint-Hugues" title="some area" href="#" shape="poly" coords="212,2,281,1,282,73,210,72" />
+       <!-- <area alt="" title="Course Reserves and Tech Landing" href="#" shape="poly" coords="456,347,488,348,490,371,461,370"/>-->
+        <area alt="" title="Info Desk" href="#" shape="poly" coords="412,381,434,381,435,432,411,432" />
+        <area alt="" title="Bookable Study Room" href="#" shape="poly" coords="212,2,281,1,282,73,210,72" />
+        <area alt="" title="Bookable Study Room" href="#" shape="poly" coords="212,101,283,103,283,174,212,172" />
+        <area alt="" title="Drop-in Study Room" href="#" shape="poly" coords="57,3,125,2,124,72,58,72" />
+        <area alt="" title="Drop-in Study Room" href="#" shape="poly" coords="57,103,123,103,123,174,58,172" />
+        <area alt="" title="Instructional Lab & Study Space" href="#" shape="poly" coords="368,528,475,529,475,591,367,591" />
+        <area alt="" title="Reading Room" href="#" shape="poly" coords="363,382,400,382,401,432,364,433" />
+        <area alt="" title="Nook" href="#" shape="poly" coords="159,384,161,430,283,431,283,381" />
+        <area alt="" title="Info Commons" href="#" shape="poly" coords="189,194,300,195,303,340,191,344" />
+        <area alt="" title="Bike Desks" href="#" shape="poly" coords="143,384,155,384,158,430,144,431" />
+        <area alt="" title="Wellness Space" href="#" shape="poly" coords="317,371,334,371,335,392,318,392" />
+        <area alt="" title="Study Carrels" href="#" shape="poly" coords="125,866,393,868,393,881,127,880" />
+        <area alt="" title="Study Carrels" href="#" shape="poly" coords="130,447,285,448,283,468,130,467" />
+        <area alt="" title="255" href="#" shape="poly" coords="59,6,58,32,116,32,116,7" /> 
+        <area alt="" title="Data & Digital Skills Lab" href="#" shape="poly" coords="60,196,181,194,181,249,59,249" />
+        <area alt="" title="Makerspace" href="#" shape="poly" coords="369,468,505,469,507,526,370,525" />
+        <area alt="" title="Specialty Equipment" href="#" shape="poly" coords="131,359,184,359,185,379,129,379" />
+        <area alt="" title="Accessibility Equipment " href="#" shape="poly" coords="177,57,195,57,197,74,178,79" />
+        <area alt="" title="Printing/Copying/Scanning " href="#" shape="poly" coords="419,447,490,446,490,469,418,468" />
+        <area alt="" title="Compact Storage (journals before 1998)" href="#" shape="poly" coords="126,5,209,2,210,51,127,62" />
+        <area alt="" title="Compact Storage (journals before 1998)" href="#" shape="poly" coords="127,102,209,104,210,169,126,168" />
+        <area alt="" title="Self-Checkout Machine" href="#" shape="poly" coords="306,448,306,466,353,469,353,449" />
+        <area alt="" title="Journal Stacks (1998-current)" href="#" shape="poly" coords="106,655,111,876,3,878,4,654" />
+        <area alt="" title="Book Stacks (JQ-Z)" href="#" shape="poly" coords="130,619,393,626,394,858,127,855" />
+        <area alt="" title="Popular Collection " href="#" shape="poly" coords="345,397,361,398,361,419,346,417" />
+
+  </map>
+
+  
+      <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'Facilities')">Facilities</button>
+          <button class="tablinks" onclick="openCity(event, 'Paris')">Services and Collections</button>
+          <button class="tablinks" onclick="openCity(event, 'Tokyo')">Staff Areas</button>
+        </div>
+        
+        <div id="Facilities" class="tabcontent">
+          
+          <p>Bookable Group Study Room AC 251 - 253A<p>
+          <p>Drop-in Group Study Room AC 255 - 258</p>
+          <p>Instructional Lab & Study Space AC 286A</p>
+          <p>Reading Room</p>
+          <p>Nook</p>
+          <p>Info Commons</p>
+          <p>Bike Desks</p>
+          <p>Wellness Space</p>
+          <p>Study Carrels</p>
+          <p>Washrooms</p>
+          <p>Elevator</p>
+          <p>Self-Checkout Machine</p>
+        </div>
+        
+        <div id="Paris" class="tabcontent">
+          <p>Popular Collection</p>
+          <p>Course Reserves & Tech Lending</p>
+          <p>Compact Storage (journals before 1998)</p>
+          <p>Book Stacks (JQ-Z)</p>
+          <p>Info Desk</p>
+          <p>Printing/Copying/Scanning</p>
+          <p>Specialty Equipment</p>
+          <p>Data Lab AC 260</p>
+          <p>Makerspace</p>
+          <p>Journal Stacks (1998-current)</p>
+          <p>Cookbook Collection</p>
+          <p>Academic Skills Collection</p>
+          <p>Games Collection</p>
+          <p>Accessibility Equipment</p>
+        </div>
+        
+        <div id="Tokyo" class="tabcontent">
+          <p>Digital Scholarship Unit AC 270</p>
+          <p>Chief Librarian AC 264</p>
+          <p>Administrative Assistant AC 263</p>
+          <p>Business Officer AC 265</p>
+          <p>User Services  AC 280</p>
+          <p>User Services Coordinator AC 281</p>
+          <p>User Services & Collections AC 275</p>
+          <p>Digital Scholarship Coordinator AC 278</p>
+          <p>Collection Development Coordinator AC 276</p>
+          <p>Liaison Librarian Coordinator AC 288</p>
+          <p>Data Librarian AC 287</p>
+          <p>Data Librarian AC 287</p>
+        </div>
+</div>
+
+      <!--For the second Floor -->
+
+<div class="second" style="display: none;" id="second">
+      <h2>UTSC LIBRARY SECOND FLOOR</h2>
+
+         <img src="2nd Floor_Wayfinding Project-01.jpg" alt="" usemap="#Map" style="width:738.5px; height:370px;" />
+      
+
+      <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'Facilities')">Facilities</button>
+          <button class="tablinks" onclick="openCity(event, 'Paris')">Services and Collections</button>
+        </div>
+      
+        <div id="Facilities" class="tabcontent">
+          
+            <p>Silent Study Room AC 338<p>
+            <p>Silent Study Room AC 313</p>
+            <p>Study Carrels</p>
+            <p>Washrooms</p>
+            <p>Elevator</p>
+      
+          </div>
+
+          <div id="Paris" class="tabcontent">
+            <p>Book Stacks (A-JN)</p> 
+          </div>
+
+ </div>
+
+
+ <script type="text/javascript" src="../build/jquery.mapify.js"></script>
+
+ <script type="text/javascript">
+      
+         
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      };
+
+      function showFirstFloor() {
+        var x = document.getElementById("first");
+        x.style.display = "block";
+        var y = document.getElementById("second");
+        y.style.display = "none";
+        $("img[usemap]").mapify();
+
+      };
+
+      function showSecondFloor() {
+        var x = document.getElementById("second");
+        x.style.display = "block";
+        var y = document.getElementById("first");
+        y.style.display = "none";
+
+      };
+
+      $("img[usemap]").mapify({
+	      popOver: {
+		    content: function(zone){ 
+			  return "<strong>"+zone.attr("data-title")+"</strong>"+zone.attr("data-nbmembre")+" Members";
+	    	},
+	    	delay: 0.2,
+        margin: "15px",
+        height: "130px",
+        width: "260px"
+      	}
+      });
+      
+      $(function(){
+	
+	$("img[usemap]:first").mapify({
+		popOver: {
+			content: function(zone){
+				return "<strong>"+zone.attr("data-title")+"</strong>"+zone.attr("data-nbmembre")+" Members";
+			},
+			delay: 0.7,
+			margin: "15px",
+			height: "130px",
+			width: "260px"
+		},
+		onAreaHighlight: function(){
+			console.log("onAreaHighlight callback");
+		},
+		onMapClear: function(){
+			console.log("onMapClear callback");
+		}
+	});
+	
+	$("#dynamicClassChange").click(function() {
+		$(this).attr("data-hover-class","hover-green");
+	});
+	
+});
+    $('.map').maphilight();
+
+      </script>
+         
+      </body>
+      </html> 
