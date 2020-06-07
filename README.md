@@ -6,5 +6,5 @@ Tools used for the floorplan: Photoshop, Illustrator
 
 Technologies for Development: HTML, CSS and JavaScript
 
-
+![](Screen Shot 2020-06-07 at 2.34.07 AM)
 
