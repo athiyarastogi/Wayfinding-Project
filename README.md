@@ -8,3 +8,6 @@ This was designed for University of Toronto Scarborough Website to navigate the 
 
 ![](Screen%20Shot%202020-06-07%20at%202.34.07%20AM.png)
 
+![](Second%20Floor%20Map.png)
+
+
